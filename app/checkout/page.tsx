@@ -491,7 +491,7 @@ import type { StaticImageData } from "next/image";
 import Image from "next/image";
 
 interface CartItem {
-  id: string;
+  id: number;
   name: string;
   quantity: number;
   price: number;

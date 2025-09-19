@@ -1,3 +1,4 @@
+import Link from "next/link"
 import productData  from "../../data/productData"
 import ProductCard from "../ProductCard"
 
@@ -45,15 +46,19 @@ export default function ProductListing() {
             <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10">
                 {productData.slice(0, 14).map((item) => (
                     <ProductCard 
+                        id={item.id}
                         key={item.id}
                         name={item.name}
                         price={item.price}
+                        image={item.image}
                     />
                 ))}
             </div>
 
             <div className="mt-10 flex justify-center">
-                <button className="text-white bg-[#7c6a46] py-2 rounded-[8px] px-8">See all products</button>
+                <Link href="/products">
+                    <button className="text-white bg-[#7c6a46] py-2 rounded-[8px] px-8">See all products</button>
+                </Link>
             </div>
         </div>
     )

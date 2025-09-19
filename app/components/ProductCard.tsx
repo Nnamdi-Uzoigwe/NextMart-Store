@@ -11,7 +11,7 @@ interface productCardProps {
 
 export default function ProductCard({ id, name, price, image }: productCardProps) {
   return (
-    <Link href={`/product/${id}`} className="bg-gray-50 shadow-sm overflow-hidden h-auto min-h-[300px] rounded-[14px] grid grid-cols-1 lg:grid-cols-2">
+    <div className="bg-gray-50 shadow-sm overflow-hidden h-auto min-h-[300px] rounded-[14px] grid grid-cols-1">
       <div className="bg-gray-200 relative w-full h-[300px] p-4">
           <Image
             src={image} 
@@ -25,10 +25,10 @@ export default function ProductCard({ id, name, price, image }: productCardProps
         <p className="mb-4">${price}</p>
         </div>
         <div className="flex flex-col gap-2">
-        <AddToCartButton />
-        <button className="border-2 border-black p-2 rounded-xl">See More</button>
+        <AddToCartButton product={{ id, name, price }} />
+        <Link className="border-2 border-black p-2 rounded-xl flex justify-center items-center" href={`/product/${id}`} >See More</Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

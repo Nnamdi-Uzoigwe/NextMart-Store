@@ -34,7 +34,7 @@ export default function ProductListing() {
         },
     ]
     return (
-        <div className="px-6 lg:px-60">
+        <div className="px-6 lg:px-60 pb-20">
             <section className="mt-6 flex flex-wrap gap-6 justify-start lg:justify-center">
                 {categories.map((item) => (
                     <div key={item.id} className="shadow-sm font-semibold rounded-[20px] py-3 text-sm lg:text-md px-4 lg:px-8 bg-gray-100 cursor-pointer">

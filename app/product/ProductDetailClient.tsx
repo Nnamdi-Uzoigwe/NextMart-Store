@@ -18,7 +18,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="px-6 lg:px-60">
+    <div className="px-6 lg:px-60 pb-20">
       <div className="mt-10 relative w-full h-auto min-h-[400px]">
         <Image src={product?.image} alt={product?.name} fill />
       </div>
@@ -26,24 +26,8 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       <p className="mb-4">{product?.description}</p>
 
       <div className="flex flex-col justify-center">
-        <AddToCartButton />
+        <AddToCartButton product={product} />
 
-        <div className="mt-4 flex gap-4 items-center">
-          <p className="font-semibold">Select Quantity</p>
-          <button
-            className="bg-[#7c6a46] text-white p-2 rounded-[8px]"
-            onClick={() => setQuantity((q) => q + 1)}
-          >
-            <Plus />
-          </button>
-          <p className="font-semibold">{quantity}</p>
-          <button
-            className="bg-[#7c6a46] text-white p-2 rounded-[8px]"
-            onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-          >
-            <Minus />
-          </button>
-        </div>
       </div>
     </div>
   );

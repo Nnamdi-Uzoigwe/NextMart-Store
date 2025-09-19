@@ -6,7 +6,7 @@ import { Menu } from "lucide-react";
 export default function Navbar() {
     
     return (
-        <div className="px-6 lg:px-60 flex justify-between items-center w-full h-[90px] shadow-sm">
+        <div className="px-6 lg:px-60 flex justify-between items-center w-full h-[90px] shadow-md">
             <div className="text-[#7c6a46] text-2xl font-semibold">
                 NextMart
             </div>
